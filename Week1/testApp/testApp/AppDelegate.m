@@ -20,7 +20,7 @@
     //(1)Create a new Empty Application Project
     //Variables
     int bulletsLeft = 0;
-    int targetsLeft = 0;
+    int targetsLeft = 2;
     int targetsHit = 10 - (int)targetsLeft;
     float pointsTarget = 2.35;//(2-1)Create a variable using the float data type.
     float result = targetsHit * pointsTarget;
