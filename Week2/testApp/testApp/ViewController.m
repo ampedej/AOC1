@@ -1,5 +1,5 @@
 //
-//  ViewController.m
+//  MainViewController.m
 //  testApp
 //
 //  Created by Edward Murray on 4/16/13.
@@ -25,7 +25,7 @@
         title.text = @"Title";
         title.textAlignment = NSTextAlignmentCenter;
     }
-    UILabel *author = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 25.0f, 70.0f, 20.0f)];
+    UILabel *author = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 25.0f, 120.0f, 20.0f)];
     if (author != nil)
     {
         author.backgroundColor = [UIColor redColor];
@@ -33,6 +33,15 @@
         author.textAlignment = NSTextAlignmentRight;
         author.textColor = [UIColor whiteColor];
     }
+    UILabel *authorName = [[UILabel alloc] initWithFrame:CGRectMake(125.0f, 25.0f, 190.0f, 20.0f)];
+    if (author != nil)
+    {
+        authorName.backgroundColor = [UIColor blueColor];
+        authorName.text = @"AuthorName ";
+        authorName.textAlignment = NSTextAlignmentLeft;
+        authorName.textColor = [UIColor whiteColor];
+    }
+    [self.view addSubview: authorName];
     [self.view addSubview: author];
     [self.view addSubview: title];
     [super viewDidLoad];

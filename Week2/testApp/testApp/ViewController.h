@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainViewController.h
 //  testApp
 //
 //  Created by Edward Murray on 4/16/13.
