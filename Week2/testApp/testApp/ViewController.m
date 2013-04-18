@@ -25,7 +25,7 @@
         title.text = @"Title";
         title.textAlignment = NSTextAlignmentCenter;
     }
-    UILabel *author = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 25.0f, 120.0f, 20.0f)];
+    UILabel *author = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 30.0f, 120.0f, 20.0f)];
     if (author != nil)
     {
         author.backgroundColor = [UIColor redColor];
@@ -33,14 +33,68 @@
         author.textAlignment = NSTextAlignmentRight;
         author.textColor = [UIColor whiteColor];
     }
-    UILabel *authorName = [[UILabel alloc] initWithFrame:CGRectMake(125.0f, 25.0f, 190.0f, 20.0f)];
+    UILabel *authorName = [[UILabel alloc] initWithFrame:CGRectMake(125.0f, 30.0f, 190.0f, 20.0f)];
     if (author != nil)
     {
         authorName.backgroundColor = [UIColor blueColor];
-        authorName.text = @"AuthorName ";
+        authorName.text = @" AuthorName ";
         authorName.textAlignment = NSTextAlignmentLeft;
         authorName.textColor = [UIColor whiteColor];
     }
+    UILabel *publish = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 55.0f, 120.0f, 20.0f)];
+    if (author != nil)
+    {
+        publish.backgroundColor = [UIColor blackColor];
+        publish.text = @"Published: ";
+        publish.textAlignment = NSTextAlignmentRight;
+        publish.textColor = [UIColor whiteColor];
+    }
+    UILabel *publishDate = [[UILabel alloc] initWithFrame:CGRectMake(125.0f, 55.0f, 190.0f, 20.0f)];
+    if (author != nil)
+    {
+        publishDate.backgroundColor = [UIColor yellowColor];
+        publishDate.text = @" Date ";
+        publishDate.textAlignment = NSTextAlignmentLeft;
+        publishDate.textColor = [UIColor blackColor];
+    }
+    UILabel *summary = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 80.0f, 120.0f, 20.0f)];
+    if (author != nil)
+    {
+        summary.backgroundColor = [UIColor darkGrayColor];
+        summary.text = @" Summary: ";
+        summary.textAlignment = NSTextAlignmentLeft;
+        summary.textColor = [UIColor whiteColor];
+    }
+    UILabel *summaryDetail = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 105.0f, 310.0f, 100.0f)];
+    if (title != nil)
+    {
+        summaryDetail.backgroundColor = [UIColor lightGrayColor];
+        summaryDetail.text = @" Details... ";
+        summaryDetail.textAlignment = NSTextAlignmentCenter;
+        summaryDetail.textColor = [UIColor blackColor];
+    }
+    UILabel *listOfItems = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 210.0f, 120.0f, 20.0f)];
+    if (author != nil)
+    {
+        listOfItems.backgroundColor = [UIColor cyanColor];
+        listOfItems.text = @" List of Items: ";
+        listOfItems.textAlignment = NSTextAlignmentLeft;
+        listOfItems.textColor = [UIColor blackColor];
+    }
+    UILabel *items = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 235.0f, 310.0f, 100.0f)];
+    if (title != nil)
+    {
+        items.backgroundColor = [UIColor orangeColor];
+        items.text = @" Items... ";
+        items.textAlignment = NSTextAlignmentCenter;
+        items.textColor = [UIColor blackColor];
+    }
+    [self.view addSubview: listOfItems];
+    [self.view addSubview: items];
+    [self.view addSubview: summaryDetail];
+    [self.view addSubview: summary];
+    [self.view addSubview: publishDate];
+    [self.view addSubview: publish];
     [self.view addSubview: authorName];
     [self.view addSubview: author];
     [self.view addSubview: title];
