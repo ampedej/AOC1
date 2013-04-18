@@ -92,8 +92,14 @@
     
     //Labels and Arrays
     //1 - Create an NSArray of 5 items
-    NSArray * ItemsListArray = [[NSArray alloc] initWithObjects:@"Huckleberry Finn", @"Tom Sawyer", @"Widow Douglas", @"Gold", @"Adventure", nil];
+    NSArray * ItemsListArray = [[NSArray alloc] initWithObjects:@"Huckleberry Finn, ", @"Tom Sawyer, ", @"Widow Douglas, ", @"Gold, ", @" and Adventure!", nil];
     
+    //2 - Create a variable of type NSMutableString and allocate it. Loop through the NSArray you created and append each of these items to your NSMutableString
+    NSMutableString *itemsInArray = [[NSMutableString alloc] init];
+    for (int i=0; i<ItemsListArray.count; i++)
+    {
+        [itemsInArray appendString:ItemsListArray[i]];
+    }
     
     UILabel *listOfItems = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 270.0f, 120.0f, 20.0f)];
     if (author != nil)
@@ -103,13 +109,14 @@
         listOfItems.textAlignment = NSTextAlignmentLeft;
         listOfItems.textColor = [UIColor blackColor];
     }
-    UILabel *items = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 295.0f, 310.0f, 100.0f)];
+    UILabel *items = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 295.0f, 310.0f, 70.0f)];
     if (title != nil)
     {
         items.backgroundColor = [UIColor orangeColor];
-        items.text = @" Items... ";
+        items.text = itemsInArray;
         items.textAlignment = NSTextAlignmentCenter;
         items.textColor = [UIColor blackColor];
+        items.numberOfLines = 8;
     }
     [self.view addSubview: listOfItems];
     [self.view addSubview: items];
