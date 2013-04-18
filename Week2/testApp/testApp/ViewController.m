@@ -16,8 +16,11 @@
 
 - (void)viewDidLoad
 {
+    //1 - Background color change.
     self.view.backgroundColor = [UIColor whiteColor];
     
+    //Book Information
+    //1 - Label for title
     UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 5.0f, 310.0f, 20.0f)];
     if (title != nil)
     {
@@ -25,6 +28,8 @@
         title.text = @"Adventures of Huckleberry Finn";
         title.textAlignment = NSTextAlignmentCenter;
     }
+    
+    //2 - Label for author
     UILabel *author = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 30.0f, 120.0f, 20.0f)];
     if (author != nil)
     {
@@ -33,6 +38,8 @@
         author.textAlignment = NSTextAlignmentRight;
         author.textColor = [UIColor whiteColor];
     }
+    
+    //3 - Label for author name
     UILabel *authorName = [[UILabel alloc] initWithFrame:CGRectMake(125.0f, 30.0f, 190.0f, 20.0f)];
     if (author != nil)
     {
@@ -41,6 +48,8 @@
         authorName.textAlignment = NSTextAlignmentLeft;
         authorName.textColor = [UIColor whiteColor];
     }
+    
+    //4 - Label for published
     UILabel *publish = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 55.0f, 120.0f, 20.0f)];
     if (author != nil)
     {
@@ -49,6 +58,8 @@
         publish.textAlignment = NSTextAlignmentRight;
         publish.textColor = [UIColor whiteColor];
     }
+    
+    //5 - Label for published date
     UILabel *publishDate = [[UILabel alloc] initWithFrame:CGRectMake(125.0f, 55.0f, 190.0f, 20.0f)];
     if (author != nil)
     {
@@ -57,6 +68,8 @@
         publishDate.textAlignment = NSTextAlignmentLeft;
         publishDate.textColor = [UIColor blackColor];
     }
+    
+    //6 - Label for summary
     UILabel *summary = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 80.0f, 120.0f, 20.0f)];
     if (author != nil)
     {
@@ -65,6 +78,8 @@
         summary.textAlignment = NSTextAlignmentLeft;
         summary.textColor = [UIColor whiteColor];
     }
+    
+    //7 - Label for summary details
     UILabel *summaryDetail = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 105.0f, 310.0f, 160.0f)];
     if (title != nil)
     {
@@ -74,6 +89,12 @@
         summaryDetail.textColor = [UIColor blackColor];
         summaryDetail.numberOfLines = 8;
     }
+    
+    //Labels and Arrays
+    //1 - Create an NSArray of 5 items
+    NSArray * ItemsListArray = [[NSArray alloc] initWithObjects:@"Huckleberry Finn", @"Tom Sawyer", @"Widow Douglas", @"Gold", @"Adventure", nil];
+    
+    
     UILabel *listOfItems = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 270.0f, 120.0f, 20.0f)];
     if (author != nil)
     {
