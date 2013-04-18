@@ -22,7 +22,7 @@
     if (title != nil)
     {
         title.backgroundColor = [UIColor greenColor];
-        title.text = @"Title";
+        title.text = @"Adventures of Huckleberry Finn";
         title.textAlignment = NSTextAlignmentCenter;
     }
     UILabel *author = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 30.0f, 120.0f, 20.0f)];
@@ -37,7 +37,7 @@
     if (author != nil)
     {
         authorName.backgroundColor = [UIColor blueColor];
-        authorName.text = @" AuthorName ";
+        authorName.text = @" Mark Twain ";
         authorName.textAlignment = NSTextAlignmentLeft;
         authorName.textColor = [UIColor whiteColor];
     }
@@ -53,7 +53,7 @@
     if (author != nil)
     {
         publishDate.backgroundColor = [UIColor yellowColor];
-        publishDate.text = @" Date ";
+        publishDate.text = @" December 1884 ";
         publishDate.textAlignment = NSTextAlignmentLeft;
         publishDate.textColor = [UIColor blackColor];
     }
@@ -65,15 +65,16 @@
         summary.textAlignment = NSTextAlignmentLeft;
         summary.textColor = [UIColor whiteColor];
     }
-    UILabel *summaryDetail = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 105.0f, 310.0f, 100.0f)];
+    UILabel *summaryDetail = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 105.0f, 310.0f, 160.0f)];
     if (title != nil)
     {
         summaryDetail.backgroundColor = [UIColor lightGrayColor];
-        summaryDetail.text = @" Details... ";
+        summaryDetail.text = @" Huckleberry Finn is a poor boy who is abused by his drunk of a father. He has an over adventurous friend named Tom Sawyer. Throught the book Huck meets several other friends who get involved with many adventures and trouble causing situations.";
         summaryDetail.textAlignment = NSTextAlignmentCenter;
         summaryDetail.textColor = [UIColor blackColor];
+        summaryDetail.numberOfLines = 8;
     }
-    UILabel *listOfItems = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 210.0f, 120.0f, 20.0f)];
+    UILabel *listOfItems = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 270.0f, 120.0f, 20.0f)];
     if (author != nil)
     {
         listOfItems.backgroundColor = [UIColor cyanColor];
@@ -81,7 +82,7 @@
         listOfItems.textAlignment = NSTextAlignmentLeft;
         listOfItems.textColor = [UIColor blackColor];
     }
-    UILabel *items = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 235.0f, 310.0f, 100.0f)];
+    UILabel *items = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 295.0f, 310.0f, 100.0f)];
     if (title != nil)
     {
         items.backgroundColor = [UIColor orangeColor];
