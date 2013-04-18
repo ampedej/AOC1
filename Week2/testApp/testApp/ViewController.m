@@ -21,7 +21,7 @@
     
     //Book Information
     //1 - Label for title
-    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 5.0f, 310.0f, 20.0f)];
+    UILabel *title = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 5.0f, 310.0f, 25.0f)];
     if (title != nil)
     {
         title.backgroundColor = [UIColor greenColor];
@@ -30,7 +30,7 @@
     }
     
     //2 - Label for author
-    UILabel *author = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 30.0f, 120.0f, 20.0f)];
+    UILabel *author = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 35.0f, 120.0f, 25.0f)];
     if (author != nil)
     {
         author.backgroundColor = [UIColor redColor];
@@ -40,7 +40,7 @@
     }
     
     //3 - Label for author name
-    UILabel *authorName = [[UILabel alloc] initWithFrame:CGRectMake(125.0f, 30.0f, 190.0f, 20.0f)];
+    UILabel *authorName = [[UILabel alloc] initWithFrame:CGRectMake(125.0f, 35.0f, 190.0f, 25.0f)];
     if (author != nil)
     {
         authorName.backgroundColor = [UIColor blueColor];
@@ -50,7 +50,7 @@
     }
     
     //4 - Label for published
-    UILabel *publish = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 55.0f, 120.0f, 20.0f)];
+    UILabel *publish = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 65.0f, 120.0f, 25.0f)];
     if (author != nil)
     {
         publish.backgroundColor = [UIColor blackColor];
@@ -60,7 +60,7 @@
     }
     
     //5 - Label for published date
-    UILabel *publishDate = [[UILabel alloc] initWithFrame:CGRectMake(125.0f, 55.0f, 190.0f, 20.0f)];
+    UILabel *publishDate = [[UILabel alloc] initWithFrame:CGRectMake(125.0f, 65.0f, 190.0f, 25.0f)];
     if (author != nil)
     {
         publishDate.backgroundColor = [UIColor yellowColor];
@@ -70,7 +70,7 @@
     }
     
     //6 - Label for summary
-    UILabel *summary = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 80.0f, 120.0f, 20.0f)];
+    UILabel *summary = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 95.0f, 120.0f, 25.0f)];
     if (author != nil)
     {
         summary.backgroundColor = [UIColor darkGrayColor];
@@ -80,7 +80,7 @@
     }
     
     //7 - Label for summary details
-    UILabel *summaryDetail = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 105.0f, 310.0f, 160.0f)];
+    UILabel *summaryDetail = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 125.0f, 310.0f, 160.0f)];
     if (title != nil)
     {
         summaryDetail.backgroundColor = [UIColor lightGrayColor];
@@ -101,7 +101,8 @@
         [itemsInArray appendString:ItemsListArray[i]];
     }
     
-    UILabel *listOfItems = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 270.0f, 120.0f, 20.0f)];
+    //3 - Create a label with the text "List of items" and add it to the parent view
+    UILabel *listOfItems = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 290.0f, 120.0f, 25.0f)];
     if (author != nil)
     {
         listOfItems.backgroundColor = [UIColor cyanColor];
@@ -109,15 +110,19 @@
         listOfItems.textAlignment = NSTextAlignmentLeft;
         listOfItems.textColor = [UIColor blackColor];
     }
-    UILabel *items = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 295.0f, 310.0f, 70.0f)];
+    
+    //4 - Create another label beneath and set the text to the NSMutableString text
+    UILabel *items = [[UILabel alloc] initWithFrame:CGRectMake(5.0f, 320.0f, 310.0f, 70.0f)];
     if (title != nil)
     {
         items.backgroundColor = [UIColor orangeColor];
         items.text = itemsInArray;
         items.textAlignment = NSTextAlignmentCenter;
         items.textColor = [UIColor blackColor];
-        items.numberOfLines = 8;
+        items.numberOfLines = 2;
     }
+    
+    //Add labels to the view
     [self.view addSubview: listOfItems];
     [self.view addSubview: items];
     [self.view addSubview: summaryDetail];
