@@ -17,6 +17,10 @@
 - (void)viewDidLoad
 {
     
+    //4 - Call the Append function with two NSStrings. Capture the result and display a UIAlertView with the appended string using displayAlertWithString.
+    NSString * appended = [self append: @"AOC1 " secondString:@"Week 3"];
+    [self displayAlertWithString:appended];
+    
     NSNumber * addedValue = [self add:5 secondNumber:5];
     
     [super viewDidLoad];
@@ -46,10 +50,20 @@
 //3 - Create a function called Append. This function will take two NSStrings and return a new NSString containing the appended strings using an NSMutableString and the Append method.
 -(NSString *)append:(NSString*)firstString secondString:(NSString*)secondString
 {
-    NSMutableString *myString = [NSMutableString stringWithString:firstString];
-    [myString appendString: secondString];
-    return myString;
-} 
+    NSMutableString *newString = [NSMutableString stringWithString:firstString];
+    [newString appendString: secondString];
+    return newString;
+}
+
+//5 - Create a function called DisplayAlertWithString. This function will take as a parameter an NSString.
+-(void)displayAlertWithString:(NSString *)newString
+{
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:newString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    if (alert!= nil)
+    {
+        [alert show];
+    }
+}
 
 - (void)didReceiveMemoryWarning
 {
