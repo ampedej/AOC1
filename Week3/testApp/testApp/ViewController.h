@@ -14,5 +14,7 @@
 }
 
 -(NSNumber *)add:(NSInteger)firstNumber secondNumber:(NSInteger)secondNumber;
+-(BOOL)compare:(NSInteger)firstNumber secondNumber:(NSInteger)secondNumber;
+-(NSString *)append:(NSString*)firstString secondString:(NSString*)secondString;
 
 @end

@@ -24,9 +24,6 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     self.viewController = [[[ViewController alloc] initWithNibName:@"ViewController" bundle:nil] autorelease];
-    
-    NSNumber * addedValue = [self.viewController add:5 secondNumber:5];
-    
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
     return YES;

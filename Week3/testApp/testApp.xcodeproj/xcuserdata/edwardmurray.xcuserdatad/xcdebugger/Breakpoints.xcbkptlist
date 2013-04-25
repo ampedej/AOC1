@@ -8,11 +8,26 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "testApp/ViewController.m"
-         timestampString = "388542712.304654"
+         timestampString = "388546188.946496"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "9"
-         endingLineNumber = "9">
+         startingLineNumber = "15"
+         endingLineNumber = "15"
+         landmarkName = "@implementation ViewController"
+         landmarkType = "3">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "testApp/ViewController.m"
+         timestampString = "388546167.789109"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "52"
+         endingLineNumber = "52"
+         landmarkName = "-append:secondString:"
+         landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>
