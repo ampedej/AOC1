@@ -18,6 +18,13 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+}
+
+ //1 -
+-(NSNumber *)add:(NSInteger)firstNumber secondNumber:(NSInteger)secondNumber
+{    
+    return [NSNumber numberWithInteger:(firstNumber + secondNumber)];
 }
 
 - (void)didReceiveMemoryWarning

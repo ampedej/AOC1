@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    
+}
+
+-(NSNumber *)add:(NSInteger)firstNumber secondNumber:(NSInteger)secondNumber;
 
 @end
