@@ -19,9 +19,18 @@
     
     //4 - Call the Append function with two NSStrings. Capture the result and display a UIAlertView with the appended string using displayAlertWithString.
     NSString * appended = [self append: @"AOC1 " secondString:@"Week 3"];
-    [self displayAlertWithString:appended];
+    [self displayAlertWithString:appended title: @"Information"];
     
+    //6 - Call the Add function passing in two integer values. Capture the return of this function into a variable.
     NSNumber * addedValue = [self add:5 secondNumber:5];
+    
+    //7 - Bundle the returned integer into an NSNumber and then convert it to a NSString and pass it to the DisplayAlertWithString function.
+    //Initially returned an NSNumber in add function. Think i did this right.
+    NSString *addedString = [NSString stringWithFormat:@"%@", addedValue ];
+    
+    //8 - Give it some text for the title. The message will read, "The number is 00". Replace the 00 with the integer passed into the function.
+    NSString *addedMessage = [NSString stringWithFormat:@"The number is %@", addedString];
+    [self displayAlertWithString:addedMessage title:@"Number Value"];
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -56,9 +65,10 @@
 }
 
 //5 - Create a function called DisplayAlertWithString. This function will take as a parameter an NSString.
--(void)displayAlertWithString:(NSString *)newString
+//Added second parameter to dynamically change title and message based on values in the call.
+-(void)displayAlertWithString:(NSString *)newString title:(NSString *)title
 {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Information" message:newString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:newString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     if (alert!= nil)
     {
         [alert show];
