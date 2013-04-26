@@ -16,10 +16,21 @@
 
 - (void)viewDidLoad
 {
+    //Changed order of function calls so the order has a beter flow.
+    //Apped is last so it is the first to dismiss (user sees it first in a sense).
     
-    //4 - Call the Append function with two NSStrings. Capture the result and display a UIAlertView with the appended string using displayAlertWithString.
-    NSString * appended = [self append: @"AOC1 " secondString:@"Week 3"];
-    [self displayAlertWithString:appended title: @"Edward Murray"];
+    //9 - Call the Compare function with two integer values. If Compare returns YES, display an UIAlertView both with the input values and the result using
+    //    the DisplayAlertWithString function
+    
+    //Had to create variables to pass into title string
+    int first = 5;
+    int second = 5;
+    
+    BOOL compared = [self compare:first secondNumber: second];
+    
+    //Title for compare function display alert.
+    NSString * compareTitle = [NSString stringWithFormat:@"Are %d and %d equal?", first, second];
+    [self displayAlertWithString:compared ? @"YES" : @"NO" title:compareTitle];
     
     //6 - Call the Add function passing in two integer values. Capture the return of this function into a variable.
     NSNumber * addedValue = [self add:5 secondNumber:5];
@@ -32,20 +43,11 @@
     NSString *addedMessage = [NSString stringWithFormat:@"The number is: %@", addedString];
     [self displayAlertWithString:addedMessage title:@"Number Value?"];
     
-    //9 - Call the Compare function with two integer values. If Compare returns YES, display an UIAlertView both with the input values and the result using
-    //    the DisplayAlertWithString function
+    //4 - Call the Append function with two NSStrings. Capture the result and display a UIAlertView with the appended string using displayAlertWithString.
+    NSString * appended = [self append: @"AOC1 " secondString:@"Week 3"];
+    [self displayAlertWithString:appended title: @"Edward Murray"];
     
-    //Had to create variables to pass into title string
-    int first = 2;
-    int second = 2;
-    
-    BOOL compared = [self compare:first secondNumber: second];
-    
-    //Title for compare function display alert.
-    NSString * compareTitle = [NSString stringWithFormat:@"Are %d and %d equal?", first, second];
-    [self displayAlertWithString:compared ? @"YES" : @"NO" title:compareTitle];
-    
-    //[super viewDidLoad];
+    [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
 }
@@ -85,6 +87,9 @@
 //Added second parameter to dynamically change title and message based on values in the call.
 -(void)displayAlertWithString:(NSString *)newString title:(NSString *)title
 {
+    //DisplayAlertWithString Function
+    //1 - Take the passed in NSString and display it in the alert view
+    //2 - Create an UIAlertView
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:newString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
     if (alert!= nil)
     {
