@@ -10,9 +10,9 @@
 
 @interface ViewController : UIViewController
 
--(NSNumber *)add:(NSInteger)firstNumber secondNumber:(NSInteger)secondNumber;
--(BOOL)compare:(NSInteger)firstNumber secondNumber:(NSInteger)secondNumber;
--(NSString *)append:(NSString*)firstString secondString:(NSString*)secondString;
--(void)displayAlertWithString:(NSString *)newString title:(NSString*)title;
+-(NSNumber *)Add:(NSInteger)firstNumber secondNumber:(NSInteger)secondNumber;
+-(BOOL)Compare:(NSInteger)firstNumber secondNumber:(NSInteger)secondNumber;
+-(NSString *)Append:(NSString*)firstString secondString:(NSString*)secondString;
+-(void)DisplayAlertWithString:(NSString *)newString title:(NSString*)title;
 
 @end
