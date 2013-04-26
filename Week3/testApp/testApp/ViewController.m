@@ -19,7 +19,7 @@
     
     //4 - Call the Append function with two NSStrings. Capture the result and display a UIAlertView with the appended string using displayAlertWithString.
     NSString * appended = [self append: @"AOC1 " secondString:@"Week 3"];
-    [self displayAlertWithString:appended title: @"Information"];
+    [self displayAlertWithString:appended title: @"Edward Murray"];
     
     //6 - Call the Add function passing in two integer values. Capture the return of this function into a variable.
     NSNumber * addedValue = [self add:5 secondNumber:5];
@@ -29,10 +29,23 @@
     NSString *addedString = [NSString stringWithFormat:@"%@", addedValue ];
     
     //8 - Give it some text for the title. The message will read, "The number is 00". Replace the 00 with the integer passed into the function.
-    NSString *addedMessage = [NSString stringWithFormat:@"The number is %@", addedString];
-    [self displayAlertWithString:addedMessage title:@"Number Value"];
+    NSString *addedMessage = [NSString stringWithFormat:@"The number is: %@", addedString];
+    [self displayAlertWithString:addedMessage title:@"Number Value?"];
     
-    [super viewDidLoad];
+    //9 - Call the Compare function with two integer values. If Compare returns YES, display an UIAlertView both with the input values and the result using
+    //    the DisplayAlertWithString function
+    
+    //Had to create variables to pass into title string
+    int first = 2;
+    int second = 2;
+    
+    BOOL compared = [self compare:first secondNumber: second];
+    
+    //Title for compare function display alert.
+    NSString * compareTitle = [NSString stringWithFormat:@"Are %d and %d equal?", first, second];
+    [self displayAlertWithString:compared ? @"YES" : @"NO" title:compareTitle];
+    
+    //[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
 }
@@ -46,14 +59,18 @@
 //2 - Create a BOOL function called Compare that takes two NSInteger values. Return YES or NO based on whether the values are equal.
 -(BOOL)compare:(NSInteger)firstNumber secondNumber:(NSInteger)secondNumber
 {
-    bool comparedNums;
+    //Created variable for return result for call display.
+    BOOL comparison;
+    
     if (firstNumber == secondNumber)
     {
-        comparedNums = YES;
+        comparison = YES;
+        
     }else{
-        comparedNums = NO;
+        
+        comparison = NO;
     }
-    return comparedNums;
+    return comparison;
 }
 
 //3 - Create a function called Append. This function will take two NSStrings and return a new NSString containing the appended strings using an NSMutableString and the Append method.
