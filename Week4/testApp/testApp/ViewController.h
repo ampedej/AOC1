@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+{
+    UITextField *userInput;
+    UILabel *defaultText;
+}
 
 @end

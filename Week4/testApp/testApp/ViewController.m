@@ -27,7 +27,7 @@
         username.textAlignment = NSTextAlignmentLeft;
     }
     
-    UITextField *userInput = [[UITextField alloc] initWithFrame:CGRectMake(105.0f, 10.0f, 200.0f, 30.0f)];
+    userInput = [[UITextField alloc] initWithFrame:CGRectMake(105.0f, 10.0f, 200.0f, 30.0f)];
     {
         userInput.borderStyle = UITextBorderStyleRoundedRect;
     }
@@ -38,9 +38,10 @@
         login.frame = CGRectMake(174.0f, 50.0f, 130.0f, 40.0f);
         login.tintColor = [UIColor colorWithRed:0.435 green:0.506 blue:0.596 alpha:1];
         [login setTitle:@"Login" forState: UIControlStateNormal];
+        [login addTarget:self action:@selector(onClick) forControlEvents:UIControlEventTouchUpInside];
     }
     
-    UILabel *defaultText = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 110.0f, 320.0f, 70.0f)];
+    defaultText = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 110.0f, 320.0f, 70.0f)];
     if (defaultText != nil)
     {
         defaultText.backgroundColor = [UIColor colorWithRed:0.4 green:0.478 blue:0.573 alpha:1];
@@ -55,6 +56,16 @@
     [self.view addSubview: defaultText];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+}
+-(void)onClick
+{
+    if (userInput.text.length == 0)
+    {
+        defaultText.text = @"username can't be empty";
+    } else {
+        defaultText.text = [NSString stringWithFormat:@"Usernam: %@ has been logged", userInput.text];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
