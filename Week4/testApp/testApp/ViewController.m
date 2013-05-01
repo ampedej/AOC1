@@ -32,8 +32,17 @@
         userInput.borderStyle = UITextBorderStyleRoundedRect;
     }
     
+    UIButton *login = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    if (login != nil)
+    {
+        login.frame = CGRectMake(174.0f, 50.0f, 130.0f, 40.0f);
+        login.tintColor = [UIColor colorWithRed:0.435 green:0.506 blue:0.596 alpha:1];
+        [login setTitle:@"Login" forState: UIControlStateNormal];
+    }
+    
     [self.view addSubview: username];
     [self.view addSubview: userInput];
+    [self.view addSubview: login];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
