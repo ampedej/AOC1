@@ -40,9 +40,19 @@
         [login setTitle:@"Login" forState: UIControlStateNormal];
     }
     
+    UILabel *defaultText = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 110.0f, 320.0f, 70.0f)];
+    if (defaultText != nil)
+    {
+        defaultText.backgroundColor = [UIColor colorWithRed:0.4 green:0.478 blue:0.573 alpha:1];
+        defaultText.text = @"Please Enter Username Above";
+        defaultText.textColor = [UIColor whiteColor];
+        defaultText.textAlignment = NSTextAlignmentCenter;
+    }
+    
     [self.view addSubview: username];
     [self.view addSubview: userInput];
     [self.view addSubview: login];
+    [self.view addSubview: defaultText];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
