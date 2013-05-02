@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #define BUTTON_TAG_ZERO 0
 #define BUTTON_TAG_ONE 1
+#define BUTTON_TAG_TWO 2
 
 @interface ViewController ()
 
@@ -63,11 +64,30 @@
         [dateButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     
+    UIButton *infoButton = [UIButton buttonWithType:UIButtonTypeInfoDark];
+    if (infoButton != nil)
+    {
+        infoButton.frame = CGRectMake(10.0f, 280.0f, 30.0f, 30.0f);
+        infoButton.tag = BUTTON_TAG_TWO;
+        [infoButton addTarget:self action:@selector(onClick:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    infoText = [[UILabel alloc] initWithFrame:CGRectMake(0.0f, 320.0f, 320.0f, 20.0f)];
+    if (infoText != nil)
+    {
+        infoText.backgroundColor = [UIColor colorWithRed:0.941 green:0.945 blue:0.945 alpha:1];
+        infoText.text = @"";
+        infoText.textColor = [UIColor darkGrayColor];
+        infoText.textAlignment = NSTextAlignmentLeft;
+    }
+    
     [self.view addSubview: username];
     [self.view addSubview: userInput];
     [self.view addSubview: login];
     [self.view addSubview: defaultText];
     [self.view addSubview: dateButton];
+    [self.view addSubview: infoButton];
+    [self.view addSubview: infoText];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -80,14 +100,15 @@
         } else {
             defaultText.text = @"username can't be empty";
         }
-    }
-    if (button.tag == BUTTON_TAG_ONE)
+        [userInput resignFirstResponder];
+    }else if (button.tag == BUTTON_TAG_ONE)
     {
+        //Not sure if this is how I was suppose to do NSDate but it's the only way I could make it work.
         NSDate *date = [NSDate date];
         NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
         if (dateFormatter != nil)
         {
-            [dateFormatter setDateStyle:NSDateFormatterFullStyle];
+            [dateFormatter setDateFormat:@"MMMM/dd/yyyy hh:mm aaa"];
             NSString *todaysDate = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:date]];
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Date" message:todaysDate delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             if (alert!= nil)
@@ -95,7 +116,8 @@
                 [alert show];
             }
         }
-
+    }else{
+        infoText.text = @"This Application Was Created By: Edward Murray";
     }
     
 }
