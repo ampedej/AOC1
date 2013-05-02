@@ -14,4 +14,5 @@
     UILabel *defaultText;
     UILabel *infoText;
 }
+-(void)onClick:(UIButton*)button;
 @end
