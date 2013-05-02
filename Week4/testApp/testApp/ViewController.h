@@ -13,5 +13,4 @@
     UITextField *userInput;
     UILabel *defaultText;
 }
-
 @end
